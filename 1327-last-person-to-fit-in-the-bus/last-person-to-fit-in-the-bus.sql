@@ -1,9 +1,9 @@
-SELECT person_name
-FROM (
-    SELECT person_name,
-           SUM(weight) OVER (ORDER BY turn) AS total_weight
-    FROM Queue
+select person_name
+from (
+    select person_name,
+           SUM(weight) over (order by turn) as total_weight
+    from Queue
 ) q
-WHERE total_weight <= 1000
-ORDER BY total_weight DESC
-LIMIT 1;
+where total_weight <= 1000
+order by total_weight desc
+limit 1;
